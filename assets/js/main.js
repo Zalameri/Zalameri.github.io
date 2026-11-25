@@ -61,9 +61,10 @@
   let ALL = [], filter = "all";
   const catName = (c) => (c === "new" ? "New on GitHub" : S.categories[c] || c);
   function renderFilters() {
-    const cats = ["all", ...new Set(ALL.map((p) => p.category))];
+    const MORE = ALL.filter((p) => !p.featured);
+    const cats = ["all", ...new Set(MORE.map((p) => p.category))];
     $("#filters").innerHTML = cats.map((c) => {
-      const n = c === "all" ? ALL.length : ALL.filter((p) => p.category === c).length;
+      const n = c === "all" ? MORE.length : MORE.filter((p) => p.category === c).length;
       return `<button class="filter" type="button" data-c="${esc(c)}" aria-pressed="${c === filter}">${c === "all" ? "All" : esc(catName(c))}</button>`;
     }).join("");
   }
@@ -97,13 +98,13 @@
   }
   function renderGrid() {
     const q = $("#q").value.trim().toLowerCase();
-    const list = ALL.filter((p) => (filter === "all" || p.category === filter) &&
+    const list = ALL.filter((p) => !p.featured && (filter === "all" || p.category === filter) &&
       (!q || [p.title, p.oneLiner, p.label, ...(p.tech || [])].join(" ").toLowerCase().includes(q)));
     $("#grid").innerHTML = list.length ? list.map((p) => {
       const lang = p.gh && p.gh.language;
       const fresh = p.pushed && Date.now() - Date.parse(p.pushed) < 10 * 864e5;
       return `<li class="card reveal a-${esc(p.accent)}"><a href="${esc(p.slug ? caseUrl(p) : p.url)}" ${p.slug ? "" : 'rel="noopener"'}>
-        <div class="thumb">${thumb(p)}${p.featured ? '<span class="badge">Featured</span>' : p.auto ? '<span class="badge new">New</span>' : ""}</div>
+        <div class="thumb">${thumb(p)}${p.auto ? '<span class="badge new">New</span>' : ""}</div>
         <div class="card-body">
           <div class="card-meta"><span class="c">${esc(p.label)}</span><span>${esc(p.when || "")}</span></div>
           <h3>${esc(p.title)}</h3>
