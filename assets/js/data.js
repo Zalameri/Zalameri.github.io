@@ -23,7 +23,7 @@ window.SITE = {
   showTopic: "portfolio",
 
   /* GitHub repos that never show on the site (labs, tests, the profile itself) */
-  hiddenRepos: ["Zalameri", "Zalameri.github.io", "CS3081AI", "hello-github", "Software-Engineering", "Three-Reports-README.md"],
+  hiddenRepos: ["studybuddy-flashcards", "apply-board", "Zalameri", "Zalameri.github.io", "CS3081AI", "hello-github", "Software-Engineering", "Three-Reports-README.md"],
 
   categories: { ai: "AI systems", web: "Web apps", data: "Databases", software: "Software", research: "Research", tools: "Tools & CLI" },
 
@@ -146,39 +146,6 @@ window.SITE = {
       ],
       role: "I led the project end to end: I defined the scope and features, coordinated the team and delivered the full-stack application",
       teamSize: 3
-    },
-    {
-      slug: "studybuddy-flashcards",
-      featured: false,
-      title: "StudyBuddy Flashcards",
-      category: "tools",
-      label: "CLI · Spaced repetition",
-      oneLiner: "A command-line flashcard app that schedules each review at the right time using the SM-2 spaced-repetition algorithm.",
-      repo: "studybuddy-flashcards",
-      when: "Nov 2026",
-      status: "Source on GitHub",
-      accent: "violet",
-      tech: ["Python", "SQLite", "SM-2", "pytest", "GitHub Actions"],
-      terminal: [
-        "$ python -m studybuddy add-deck Biology",
-        "Created deck 'Biology'.",
-        "$ python -m studybuddy add-card Biology \"Powerhouse of the cell?\" \"Mitochondria\"",
-        "Added card #1 to 'Biology'.",
-        "$ python -m studybuddy decks",
-        "Biology: 2 card(s), 2 due",
-        "$ python -m studybuddy stats",
-        "Cards: 2  Due today: 2  Reviews: 0  Accuracy: n/a"
-      ],
-      stats: [{ value: "33", label: "pytest tests passing" }, { value: "0", label: "runtime dependencies" }],
-      problem: "Passive re-reading leads to rapid forgetting. Spaced repetition is proven effective, yet most existing tools are heavyweight and complex.",
-      solution: "A lightweight command-line tool with no external dependencies. Decks and cards are stored in SQLite, and the SM-2 scheduler is a small, fully tested function that decides when each card should return.",
-      features: [
-        "SM-2 scheduling: well-known cards return later, forgotten cards return the next day",
-        "Per-deck card counts, cards due today and overall accuracy",
-        "Safe, parameterised SQL using only Python's standard library"
-      ],
-      role: "Solo project",
-      teamSize: 1
     },
     {
       slug: "student-grade-tracker",
@@ -312,12 +279,12 @@ window.SITE = {
   /* each skill lists the project slugs where it was really used */
   skillGroups: [
     { name: "Languages", skills: [
-      { name: "Python", projects: ["aquagent", "studybuddy-flashcards", "student-grade-tracker"] },
+      { name: "Python", projects: ["aquagent", "student-grade-tracker"] },
       { name: "TypeScript", projects: ["plantcare-ai"] },
       { name: "JavaScript", projects: ["smart-study", "plantcare-ai"] },
       { name: "Java", projects: ["atm-management-system"] },
       { name: "PHP", projects: ["smart-study"] },
-      { name: "SQL", projects: ["student-course-management", "smart-study", "studybuddy-flashcards"] },
+      { name: "SQL", projects: ["student-course-management", "smart-study"] },
       { name: "HTML & CSS", projects: ["smart-study", "plantcare-ai"] }
     ]},
     { name: "AI & reasoning", skills: [
@@ -325,24 +292,22 @@ window.SITE = {
       { name: "Constraint satisfaction", projects: ["aquagent"] },
       { name: "Decision support", projects: ["aquagent"] },
       { name: "Vision LLM APIs", projects: ["plantcare-ai"] },
-      { name: "Gemini API", projects: ["smart-study"] },
-      { name: "SM-2 scheduling", projects: ["studybuddy-flashcards"] }
+      { name: "Gemini API", projects: ["smart-study"] }
     ]},
     { name: "Frameworks & data", skills: [
       { name: "React", projects: ["plantcare-ai"] },
       { name: "Tailwind CSS", projects: ["plantcare-ai"] },
       { name: "Streamlit", projects: ["aquagent"] },
       { name: "Zod", projects: ["plantcare-ai"] },
-      { name: "MySQL / MariaDB", projects: ["smart-study", "student-course-management"] },
-      { name: "SQLite", projects: ["studybuddy-flashcards"] }
+      { name: "MySQL / MariaDB", projects: ["smart-study", "student-course-management"] }
     ]},
     { name: "Engineering practice", skills: [
-      { name: "Unit testing", projects: ["aquagent", "plantcare-ai", "smart-study", "studybuddy-flashcards", "student-grade-tracker"] },
-      { name: "GitHub Actions CI", projects: ["plantcare-ai", "studybuddy-flashcards", "student-grade-tracker"] },
+      { name: "Unit testing", projects: ["aquagent", "plantcare-ai", "smart-study", "student-grade-tracker"] },
+      { name: "GitHub Actions CI", projects: ["plantcare-ai", "student-grade-tracker"] },
       { name: "Object-oriented design", projects: ["atm-management-system"] },
       { name: "ER modelling", projects: ["student-course-management"] },
       { name: "Requirements (SRS) & UML", projects: ["aquagent"] },
-      { name: "Git & GitHub", projects: ["plantcare-ai", "smart-study", "studybuddy-flashcards", "student-grade-tracker"] }
+      { name: "Git & GitHub", projects: ["plantcare-ai", "smart-study", "student-grade-tracker"] }
     ]},
     { name: "Security & research", skills: [
       { name: "Phishing & social engineering", projects: ["phishing-attacks"] },
@@ -363,7 +328,7 @@ window.SITE = {
     { when: "Aug 2026", title: "First public repository", text: "Published Student Grade Tracker on GitHub." },
     { when: "Sep 2026", title: "Peer Academic Advisor", text: "Started advising students on planning and registering their course schedules." },
     { when: "Oct 2026", title: "Dean's List & IEEEXtreme 20.0", text: "Named to the Dean's List of Effat College of Engineering and competed in IEEE's global 24-hour programming competition." },
-    { when: "Nov 2026", title: "AquaGent, PlantCare AI & StudyBuddy", text: "Delivered an AI decision-support system, a plant-disease detection app and a spaced-repetition tool, and completed 25 certified volunteer hours." }
+    { when: "Nov 2026", title: "AquaGent & PlantCare AI", text: "Delivered an AI decision-support system and a plant-disease detection platform, and completed 25 certified volunteer hours." }
   ],
 
   education: {

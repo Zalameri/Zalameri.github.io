@@ -123,7 +123,7 @@
   $("#edu-when").textContent = E.when; $("#edu-school").textContent = E.school; $("#edu-degree").textContent = E.degree;
   $("#edu-courses").innerHTML = E.courses.map((c) => `<li>${esc(c)}</li>`).join("");
   (function typeTerm() {
-    const lines = S.projects.find((p) => p.slug === "studybuddy-flashcards").terminal, el = $("#term");
+    const lines = S.projects.find((p) => p.slug === "student-grade-tracker").terminal, el = $("#term");
     const html = (n, partial) => lines.slice(0, n).map((l) => l.startsWith("$") ? `<span class="p">$</span>${esc(l.slice(1))}` : esc(l)).join("\n") + (partial != null ? (n ? "\n" : "") + partial : "") + '<span class="cursor"></span>';
     el.innerHTML = html(lines.length).replace('<span class="cursor"></span>', ""); return;
     let started = false;
