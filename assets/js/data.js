@@ -34,7 +34,7 @@ window.SITE = {
       title: "AquaGent",
       category: "ai",
       label: "AI decision support · Water harvesting",
-      oneLiner: "An AI decision-support system that recommends the best way to harvest drinking water from the air: a fog net or a MOF sorbent bed, and for how long.",
+      oneLiner: "An AI decision-support system that recommends the best way to harvest drinking water from the air: a fog-catching net or a water-absorbing MOF material, and for how long.",
       repo: "aquagent",
       course: "CS3081 Artificial Intelligence · CS3151 Software Engineering",
       instructor: "Dr. Passent Elkafrawy",
@@ -123,7 +123,7 @@ window.SITE = {
       coverAlt: "Smart Study dashboard: plan your week, summarize chapters and get exam-ready",
       phone: "assets/img/projects/smartstudy-phone.webp",
       stats: [
-        { value: "14", label: "JavaScript tests passing" },
+        { value: "17", label: "automated tests passing" },
         { value: "3", label: "quiz formats + exam mode" },
         { value: "EN/AR", label: "bilingual support" }
       ],
