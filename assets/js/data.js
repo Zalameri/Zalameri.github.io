@@ -61,10 +61,10 @@ window.SITE = {
         "Operator approval step, run history and CSV export"
       ],
       gallery: [
-        { src: "assets/img/projects/aquagent-diagram.webp", alt: "AquaGent system solution diagram: inputs, input checks, Bayesian network and CSP analysis, fog collector vs MOF sorbent bed, recommendation, output and operator decision", caption: "System solution diagram, from the project report" },
-        { src: "assets/img/projects/aquagent-inputs.webp", alt: "AquaGent input panel: weather, sensors and safety, operating limits and collector specifications", caption: "Running app: weather, sensor and collector inputs" },
-        { src: "assets/img/projects/aquagent-results.webp", alt: "AquaGent results: Bayesian posterior and the recommended plan", caption: "Running app: Bayesian posterior and the ranked recommendation" },
-        { src: "assets/img/projects/aquagent-infographic.webp", alt: "AquaGent infographic: the problem, the read-compare-recommend solution, the two harvesting methods and how it works", caption: "Project infographic from the final pitch", tall: true }
+        { src: "assets/img/projects/aquagent-diagram.webp", alt: "AquaGent system solution diagram: inputs, input checks, Bayesian network and CSP analysis, fog collector vs MOF sorbent bed, recommendation, output and operator decision", caption: "System architecture diagram" },
+        { src: "assets/img/projects/aquagent-inputs.webp", alt: "AquaGent input panel: weather, sensors and safety, operating limits and collector specifications", caption: "Interface: weather, sensor and collector inputs" },
+        { src: "assets/img/projects/aquagent-results.webp", alt: "AquaGent results: Bayesian posterior and the recommended plan", caption: "Interface: Bayesian posterior and ranked recommendation" },
+        { src: "assets/img/projects/aquagent-infographic.webp", alt: "AquaGent infographic: the problem, the read-compare-recommend solution, the two harvesting methods and how it works", caption: "Project infographic", tall: true }
       ],
       role: "I led the project end to end: I defined the requirements and SRS, designed the Bayesian and constraint-satisfaction approach, and delivered the working prototype with its test suite",
       teamSize: 2,
@@ -90,7 +90,7 @@ window.SITE = {
         { value: "8 MB", label: "maximum photo size" },
         { value: "CI", label: "automated quality checks" }
       ],
-      problem: "Home gardeners notice spots or yellowing on a leaf but rarely know the cause, and advice online is scattered and often unreliable.",
+      problem: "Gardeners often notice leaf discolouration without knowing the cause, while online advice is fragmented and frequently unreliable.",
       solution: "The app prepares the photo in the browser, validates it again on the server and sends it to a vision model that must answer in a fixed format. Every answer is checked before it is shown, and source links are limited to recognised agricultural institutions. The result is a consistent, trustworthy report every time.",
       features: [
         "Drag-and-drop upload for JPG, PNG or WebP images up to 8 MB, resized automatically before sending",
@@ -101,7 +101,7 @@ window.SITE = {
         "Severity and confidence levels so uncertain results are clearly marked"
       ],
       gallery: [
-        { src: "assets/img/projects/plantcare-upload.webp", alt: "PlantCare AI upload page", caption: "The upload page, running locally" }
+        { src: "assets/img/projects/plantcare-upload.webp", alt: "PlantCare AI upload page", caption: "Image upload interface" }
       ],
       role: "Solo project",
       teamSize: 1
@@ -127,7 +127,7 @@ window.SITE = {
         { value: "3", label: "quiz formats + exam mode" },
         { value: "EN/AR", label: "bilingual support" }
       ],
-      problem: "Students keep courses, timetables, notes and revision material in separate places, and lose valuable time switching between them before exams.",
+      problem: "Students manage courses, timetables, notes and revision material across separate tools, losing valuable time before examinations.",
       solution: "Smart Study brings everything into one platform. Students organise their courses and weekly schedule, write chapter notes, and generate quizzes directly from their own key points, with an optional timed exam mode and AI-generated chapter summaries.",
       features: [
         "Secure accounts with hashed passwords; each user sees only their own data",
@@ -138,11 +138,11 @@ window.SITE = {
         "Optional AI chapter summaries using the Gemini API"
       ],
       gallery: [
-        { src: "assets/img/projects/smartstudy-schedule.webp", alt: "Smart Study week view with classes and a study block on each day", caption: "Running app: weekly schedule" },
-        { src: "assets/img/projects/smartstudy-quiz.webp", alt: "A five-question mixed quiz generated from the Uncertainty chapter notes", caption: "Running app: a quiz generated from my own chapter notes" },
-        { src: "assets/img/projects/smartstudy-chapters.webp", alt: "Chapters page with a saved chapter of seven key points", caption: "Running app: chapters and key points" },
-        { src: "assets/img/projects/smartstudy-dashboard.webp", alt: "Smart Study dashboard with courses, a focus timer and today's plan", caption: "Running app: dashboard" },
-        { src: "assets/img/projects/smartstudy-login.webp", alt: "Smart Study sign-in page", caption: "Sign-in page with the animated background" }
+        { src: "assets/img/projects/smartstudy-schedule.webp", alt: "Smart Study week view with classes and a study block on each day", caption: "Weekly schedule" },
+        { src: "assets/img/projects/smartstudy-quiz.webp", alt: "A five-question mixed quiz generated from the Uncertainty chapter notes", caption: "Quiz generated from chapter notes" },
+        { src: "assets/img/projects/smartstudy-chapters.webp", alt: "Chapters page with a saved chapter of seven key points", caption: "Chapters and key points" },
+        { src: "assets/img/projects/smartstudy-dashboard.webp", alt: "Smart Study dashboard with courses, a focus timer and today's plan", caption: "Dashboard" },
+        { src: "assets/img/projects/smartstudy-login.webp", alt: "Smart Study sign-in page", caption: "Sign-in page" }
       ],
       role: "I led the project end to end: I defined the scope and features, coordinated the team and delivered the full-stack application",
       teamSize: 3
@@ -170,7 +170,7 @@ window.SITE = {
         "Cards: 2  Due today: 2  Reviews: 0  Accuracy: n/a"
       ],
       stats: [{ value: "33", label: "pytest tests passing" }, { value: "0", label: "runtime dependencies" }],
-      problem: "Re-reading notes feels productive but is quickly forgotten. Spaced repetition is proven to work, yet most tools for it are heavy and complex.",
+      problem: "Passive re-reading leads to rapid forgetting. Spaced repetition is proven effective, yet most existing tools are heavyweight and complex.",
       solution: "A lightweight command-line tool with no external dependencies. Decks and cards are stored in SQLite, and the SM-2 scheduler is a small, fully tested function that decides when each card should return.",
       features: [
         "SM-2 scheduling: well-known cards return later, forgotten cards return the next day",
@@ -201,8 +201,8 @@ window.SITE = {
         "Status: Pass"
       ],
       stats: [{ value: "17", label: "pytest tests passing" }],
-      problem: "The original version of this program stopped working whenever a user typed an invalid grade.",
-      solution: "I rebuilt it as small, testable functions with full input validation, support for several students in one run and a class summary at the end.",
+      problem: "The original implementation terminated whenever a user entered an invalid grade.",
+      solution: "I refactored it into modular, testable functions with full input validation, multi-student support and a class summary report.",
       features: [
         "Re-prompts the user instead of crashing on invalid input",
         "Handles several students per run, with the class average and pass count",
@@ -228,7 +228,7 @@ window.SITE = {
       cover: "assets/img/projects/scms-erd.webp",
       coverAlt: "Entity-relationship diagram: Student, Course, Instructor and Log Attendance with Registers, Teaches, Attends and Has Attendance relationships",
       stats: [{ value: "6", label: "tables" }, { value: "4", label: "relationships" }, { value: "4", label: "reports and views" }],
-      problem: "Course registration, grades and attendance were still managed with spreadsheets and paper forms, leading to lost records, delays and inconsistent grades.",
+      problem: "Course registration, grading and attendance relied on spreadsheets and paper forms, resulting in lost records, delays and inconsistent data.",
       solution: "We modelled students, instructors, courses, registrations and attendance as an entity-relationship diagram, translated it into MariaDB tables with primary and foreign keys, loaded sample data and wrote reporting queries: each student's courses, attendance rates per course and absences on a given day, plus a reusable view of absent students.",
       features: [
         "ER model with many-to-many registration and teaching relationships",
@@ -238,7 +238,7 @@ window.SITE = {
         "A reusable view that lists absent students"
       ],
       gallery: [
-        { src: "assets/img/projects/scms-entities.webp", alt: "Tables of entities, attributes and relationship types from the report", caption: "Entities and relationships, from the report" }
+        { src: "assets/img/projects/scms-entities.webp", alt: "Tables of entities, attributes and relationship types from the report", caption: "Entities and relationships" }
       ],
       role: "I led the project end to end: I drove the entity-relationship design, the relational schema and the reporting queries",
       teamSize: 3
@@ -260,7 +260,7 @@ window.SITE = {
       tech: ["Java", "OOP", "Inheritance", "File I/O"],
       classes: ["Account", "CheckingAccount", "SavingsAccount", "User", "Transaction"],
       stats: [{ value: "2", label: "account types via inheritance" }, { value: "3", label: "persistent data files" }, { value: "0", label: "external libraries" }],
-      problem: "The goal was to apply object-oriented programming to a realistic system: a bank machine with users, multiple accounts and a complete transaction history.",
+      problem: "The objective was to apply object-oriented design to a realistic banking system with multiple users, account types and a complete transaction history.",
       solution: "The design uses an Account base class with Checking and Savings subclasses. Each user can hold several accounts, and every account records its transactions. A menu-driven console handles login, balance enquiries, deposits, withdrawals and transfers, and all data is saved to files between sessions.",
       features: [
         "Secure login with automatic account locking",
@@ -290,7 +290,7 @@ window.SITE = {
       tech: ["Threat analysis", "Social engineering", "MFA", "Security awareness"],
       poster: { title: "Phishing Attacks", sub: "& how to stop them", steps: ["Think", "Check", "Don't enter", "Report"] },
       stats: [{ value: "5", label: "phishing types compared" }, { value: "1", label: "real-world case study" }, { value: "4", label: "step prevention habit" }],
-      problem: "Phishing targets people rather than systems: messages look genuine, create a sense of urgency and cost attackers almost nothing to send.",
+      problem: "Phishing exploits human behaviour rather than technical flaws: messages appear legitimate, create urgency and cost attackers almost nothing.",
       solution: "We explained how phishing works, compared five attack types (email, fake websites, SMS, voice and spear phishing), analysed the 2020 Twitter breach as a case study, and translated prevention into practical controls and a simple four-step habit for users.",
       features: [
         "Why phishing succeeds: realism, urgency, low awareness and low cost",
@@ -300,7 +300,7 @@ window.SITE = {
         "Prevention: multi-factor authentication, staff training, email filtering and link verification"
       ],
       gallery: [
-        { src: "assets/img/projects/phishing-practices.webp", alt: "Slide: best practices against phishing: think, check, don't enter, report", caption: "Best practices, from our presentation" },
+        { src: "assets/img/projects/phishing-practices.webp", alt: "Slide: best practices against phishing: think, check, don't enter, report", caption: "Recommended best practices" },
         { src: "assets/img/projects/phishing-what.webp", alt: "Slide: what is phishing", caption: "What is phishing" },
         { src: "assets/img/projects/phishing-impact.webp", alt: "Slide: impact of phishing", caption: "Impact of phishing" }
       ],

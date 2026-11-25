@@ -188,7 +188,7 @@
   renderFeatured(ALL); renderFilters(); renderGrid(); reveal();
   const visible = repos.filter((r) => !r.fork && !hidden().has(r.name.toLowerCase()));
   $("#sync").innerHTML = source === "none"
-    ? `<span class="live-dot"></span>GitHub is unavailable right now; showing the curated list.`
+    ? `<span class="live-dot"></span>GitHub is temporarily unavailable; showing curated projects.`
     : `<span class="live-dot"></span>${source === "live" ? "Live from" : "Synced from"} github.com/${esc(S.person.github)} · updated ${source === "live" ? "just now" : ago(new Date(at).toISOString())}`;
   const latest = visible.slice().sort((a, b) => Date.parse(b.pushed_at) - Date.parse(a.pushed_at))[0];
   if (latest) {
@@ -213,7 +213,7 @@
     const [ic, v] = verb[e.type] || ["•", e.type.replace("Event", "")];
     const name = e.repo.name.split("/")[1];
     return `<li><span class="ic" aria-hidden="true">${ic}</span><span>${esc(v)} <b>${esc(name)}</b></span><time datetime="${esc(e.created_at)}">${ago(e.created_at)}</time></li>`;
-  }).join("") : (latest ? visible.slice(0, 5).map((r) => `<li><span class="ic" aria-hidden="true">↑</span><span>Updated <b>${esc(r.name)}</b></span><time>${ago(r.pushed_at)}</time></li>`).join("") : `<li class="muted">GitHub activity is unavailable right now.</li>`);
+  }).join("") : (latest ? visible.slice(0, 5).map((r) => `<li><span class="ic" aria-hidden="true">↑</span><span>Updated <b>${esc(r.name)}</b></span><time>${ago(r.pushed_at)}</time></li>`).join("") : `<li class="muted">GitHub activity is temporarily unavailable.</li>`);
 
   /* ---------- nav state ---------- */
   const links = $$(".nav a");
