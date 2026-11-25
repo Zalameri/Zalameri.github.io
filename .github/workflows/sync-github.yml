@@ -1,0 +1,47 @@
+# Keeps data/github.json in step with my GitHub account.
+# The site already reads GitHub live in the browser; this snapshot is the
+# fallback for when the GitHub API is rate-limited or unreachable.
+name: Sync GitHub snapshot
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours
+  workflow_dispatch:          # "Run workflow" button in the Actions tab
+  push:
+    branches: [main]
+    paths: [".github/workflows/sync-github.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-github
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch public repositories
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "users/${{ github.repository_owner }}/repos?per_page=100&sort=pushed" \
+            --jq '{generated_at: (now | todate), repos: [.[] | {name, description, html_url, homepage, language, topics, fork, archived, pushed_at, stargazers_count}]}' \
+            > data/github.json.new
+          # ignore the timestamp when deciding whether anything changed
+          if [ -f data/github.json ] && diff <(jq 'del(.generated_at)' data/github.json) <(jq 'del(.generated_at)' data/github.json.new) > /dev/null; then
+            rm data/github.json.new; echo "No changes."
+          else
+            mv data/github.json.new data/github.json
+          fi
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain data/github.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/github.json
+            git commit -m "Sync GitHub snapshot"
+            git push
+          fi

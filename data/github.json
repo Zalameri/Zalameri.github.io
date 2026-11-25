@@ -1,0 +1,113 @@
+{
+ "generated_at": "2026-11-24T20:35:09Z",
+ "repos": [
+  {
+   "name": "plantcare-ai",
+   "description": "Plant disease detection from leaf photos: React, TanStack Start, OpenAI vision with a strict JSON schema, Zod and Vitest",
+   "html_url": "https://github.com/Zalameri/plantcare-ai",
+   "homepage": null,
+   "language": "TypeScript",
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-11-24T14:30:56Z",
+   "stargazers_count": 0
+  },
+  {
+   "name": "smart-study",
+   "description": null,
+   "html_url": "https://github.com/Zalameri/smart-study",
+   "homepage": null,
+   "language": "JavaScript",
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-11-24T06:16:43Z",
+   "stargazers_count": 0
+  },
+  {
+   "name": "Zalameri",
+   "description": null,
+   "html_url": "https://github.com/Zalameri/Zalameri",
+   "homepage": null,
+   "language": null,
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-11-23T06:16:11Z",
+   "stargazers_count": 0
+  },
+  {
+   "name": "Software-Engineering",
+   "description": null,
+   "html_url": "https://github.com/Zalameri/Software-Engineering",
+   "homepage": null,
+   "language": null,
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-11-22T14:48:42Z",
+   "stargazers_count": 0
+  },
+  {
+   "name": "CS3081AI",
+   "description": null,
+   "html_url": "https://github.com/Zalameri/CS3081AI",
+   "homepage": null,
+   "language": "Jupyter Notebook",
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-11-22T14:45:26Z",
+   "stargazers_count": 0
+  },
+  {
+   "name": "studybuddy-flashcards",
+   "description": "Flashcards with SM-2 spaced repetition: Python, SQLite, CLI and tests",
+   "html_url": "https://github.com/Zalameri/studybuddy-flashcards",
+   "homepage": null,
+   "language": "Python",
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-11-22T08:53:24Z",
+   "stargazers_count": 0
+  },
+  {
+   "name": "Student-Grade-Tracker",
+   "description": null,
+   "html_url": "https://github.com/Zalameri/Student-Grade-Tracker",
+   "homepage": null,
+   "language": "Python",
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-11-21T22:45:39Z",
+   "stargazers_count": 0
+  },
+  {
+   "name": "Three-Reports-README.md",
+   "description": null,
+   "html_url": "https://github.com/Zalameri/Three-Reports-README.md",
+   "homepage": null,
+   "language": null,
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-11-15T12:44:12Z",
+   "stargazers_count": 0
+  },
+  {
+   "name": "hello-github",
+   "description": null,
+   "html_url": "https://github.com/Zalameri/hello-github",
+   "homepage": null,
+   "language": "Python",
+   "topics": [],
+   "fork": false,
+   "archived": false,
+   "pushed_at": "2026-08-03T23:47:27Z",
+   "stargazers_count": 0
+  }
+ ]
+}
