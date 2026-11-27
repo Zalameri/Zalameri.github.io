@@ -37,10 +37,15 @@ window.SITE = {
       oneLiner: "An AI decision-support system that recommends the best way to harvest drinking water from the air: a fog-catching net or a water-absorbing MOF material, and for how long.",
       repo: "aquagent",
       course: "CS3081 Artificial Intelligence · CS3151 Software Engineering",
-      instructor: "Dr. Passent Elkafrawy",
+      instructor: "Dr. Naila Marir (CS3081) · Dr. Passent Elkafrawy (CS3151)",
       when: "Nov 2026",
       status: "Working prototype",
       accent: "aqua",
+      links: [
+        { label: "Interactive demo", href: "aquagent/" },
+        { label: "Technical report (PDF)", href: "aquagent/AquaGent_ACL_Report.pdf" }
+      ],
+      members: ["Zainab Alameri", "Abubaker Baobaid"],
       tech: ["Python", "Streamlit", "Bayesian inference", "CSP / backtracking", "unittest", "SRS & UML"],
       cover: "assets/img/projects/aquagent-ui.webp",
       coverAlt: "AquaGent interface: intelligent atmospheric water-harvesting decision support system, with weather, sensor and operating-limit inputs",
@@ -66,7 +71,7 @@ window.SITE = {
         { src: "assets/img/projects/aquagent-results.webp", alt: "AquaGent results: Bayesian posterior and the recommended plan", caption: "Interface: Bayesian posterior and ranked recommendation" },
         { src: "assets/img/projects/aquagent-infographic.webp", alt: "AquaGent infographic: the problem, the read-compare-recommend solution, the two harvesting methods and how it works", caption: "Project infographic", tall: true }
       ],
-      role: "I led the project end to end: I defined the requirements and SRS, designed the Bayesian and constraint-satisfaction approach, and delivered the working prototype with its test suite",
+      role: "We worked together on every part of the project, from the literature review and agent design to the code, tests, experiments and report, and shared the work equally",
       teamSize: 2,
       notes: "A course prototype: Bayesian parameters, yields and energy rates are illustrative assumptions, not field measurements."
     },

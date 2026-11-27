@@ -30,7 +30,7 @@
       : p.terminal ? `<pre class="term" style="background:#02070a;color:#cfe7e3" aria-label="Real terminal output from ${esc(p.title)}">${p.terminal.map((l) => l.startsWith("$") ? `<span class="p">$</span>${esc(l.slice(1))}` : esc(l)).join("\n")}</pre>`
       : p.classes ? `<figure class="cs-cover"><div class="thumb" style="aspect-ratio:16/7;border-radius:18px;border:1px solid var(--line)"><div class="uml" role="img" aria-label="Class structure from the report: ${esc(p.classes.join(", "))}"><span class="cls base">${esc(p.classes[0])}</span><span class="arrows"></span><span class="cls">${esc(p.classes[1])}</span><span class="cls">${esc(p.classes[2])}</span><span class="cls side">${esc(p.classes[3])} → ${esc(p.classes[0])} → ${esc(p.classes[4])}</span></div></div><figcaption class="mono" style="margin-top:10px;color:var(--ink3)">Class structure, as described in our report</figcaption></figure>` : "";
     const solo = (p.teamSize || 1) === 1;
-    const team = `<div class="team"><span class="person me"><i>${esc(initials(S.person.name))}</i>${esc(S.person.name)}${/^I led/.test(p.role || "") ? " · Project lead" : ""}</span>${solo ? "" : `<span class="person"><i>+${p.teamSize - 1}</i>${p.teamSize - 1 === 1 ? "1 team member" : p.teamSize - 1 + " team members"}</span>`}</div>`;
+    const team = p.members ? `<div class="team">${p.members.map((m) => `<span class="person${m === S.person.name ? " me" : ""}"><i>${esc(initials(m))}</i>${esc(m)}</span>`).join("")}</div>` : `<div class="team"><span class="person me"><i>${esc(initials(S.person.name))}</i>${esc(S.person.name)}${/^I led/.test(p.role || "") ? " · Project lead" : ""}</span>${solo ? "" : `<span class="person"><i>+${p.teamSize - 1}</i>${p.teamSize - 1 === 1 ? "1 team member" : p.teamSize - 1 + " team members"}</span>`}</div>`;
     const role = `<p style="margin-top:16px">${solo ? "Independent project: designed, developed and tested by me." : `Team project · ${p.teamSize} members.`}${p.role && !/^solo/i.test(p.role) ? " " + esc(p.role) + "." : ""}</p>`;
     const gal = (p.gallery || []).filter((g) => g.src !== p.cover);
     main.innerHTML = `
@@ -43,6 +43,7 @@
           <div class="cta-row">
             ${p.url ? `<a class="btn acc" href="${esc(p.url)}" rel="noopener">View source on GitHub ↗</a>` : ""}
             ${p.gh && p.gh.homepage ? `<a class="btn" href="${esc(p.gh.homepage)}" rel="noopener">Live demo ↗</a>` : ""}
+            ${(p.links || []).map((l) => `<a class="btn" href="${esc(l.href)}" rel="noopener">${esc(l.label)} ↗</a>`).join("")}
           </div>
           <dl class="facts">${facts.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
         </div>
